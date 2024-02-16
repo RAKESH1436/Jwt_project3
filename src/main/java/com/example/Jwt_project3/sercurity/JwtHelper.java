@@ -1,4 +1,4 @@
-package com.example.Jwt_project3.helper;
+package com.example.Jwt_project3.sercurity;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
