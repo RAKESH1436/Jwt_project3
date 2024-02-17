@@ -1,4 +1,4 @@
-package com.example.Jwt_project3.controller;
+package com.example.Jwt_project3.config;
 
 import com.example.Jwt_project3.model.JwtRequest;
 import com.example.Jwt_project3.model.JwtResponse;
@@ -61,12 +61,14 @@ public class AuthController {
                 throw new BadCredentialsException(" Invalid Username or Password  !!");
             }
 
+
         }
 
         @ExceptionHandler(BadCredentialsException.class)
         public String exceptionHandler() {
             return "Credentials Invalid !!";
         }
+
 
     }
 
