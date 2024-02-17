@@ -16,6 +16,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.*;
 
 
+
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
@@ -28,7 +29,7 @@ public class AuthController {
 
     @Autowired
     private JwtHelper helper;
-    @Autowired
+
     private Logger logger = LoggerFactory.getLogger(AuthController.class);
 
 
