@@ -23,8 +23,8 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http.csrf(csrf -> csrf.disable())
-                .authorizeRequests().
-                requestMatchers("/home/**").authenticated().requestMatchers("/auth/login").permitAll()
+                .authorizeRequests().requestMatchers("/public/**").hasRole("NOMAL")
+                .requestMatchers("/home/**").authenticated().requestMatchers("/auth/login").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and().exceptionHandling(ex -> ex.authenticationEntryPoint(point))
