@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 @SpringBootApplication
@@ -26,6 +27,7 @@ public class JwtProject3Application implements CommandLineRunner {
 		user.setName("sanjay");
 		user.setRole("NOMAL");
 		user.setPassword(this.passwordEncoder.encode("abcd"));
+
 		this.userRepository.save(user);
 		User user1 = new User();
 		user1.setId("2");
