@@ -1,18 +1,23 @@
 package com.example.Jwt_project3.model;
 
+import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.Date;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-
+@Entity
+@Table(name = "user_table")
 public class User {
-    private String userid;
+    @Id()
+
+
+    private String id;
     private String name;
+    private String password;
     private String Email;
+    private String role;
 
 }

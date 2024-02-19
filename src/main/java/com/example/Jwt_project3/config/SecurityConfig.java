@@ -24,10 +24,12 @@ public class SecurityConfig {
 
         http.csrf(csrf -> csrf.disable())
                 .authorizeRequests().requestMatchers("/public/**").hasRole("NOMAL")
+                .requestMatchers("/home/**").hasRole("/ADMIN")
                 .requestMatchers("/home/**").authenticated().requestMatchers("/auth/login").permitAll()
                 .anyRequest()
                 .authenticated()
-                .and().exceptionHandling(ex -> ex.authenticationEntryPoint(point))
+                .and()
+                .exceptionHandling(ex -> ex.authenticationEntryPoint(point))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         http.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
