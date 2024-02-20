@@ -21,8 +21,6 @@ public class JwtProject3Application implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		User user = new User();
 		user.setId("1");
-
-
 		user.setEmail("sanjay@gmail.com");
 		user.setName("sanjay");
 		user.setRole("NOMAL");
@@ -31,12 +29,25 @@ public class JwtProject3Application implements CommandLineRunner {
 		this.userRepository.save(user);
 		User user1 = new User();
 		user1.setId("2");
-
 		user1.setEmail("rakesh@gmail.com");
 		user1.setName("rakesh");
 		user1.setRole("NOMAL");
 		user1.setPassword(this.passwordEncoder.encode("abcde"));
 		this.userRepository.save(user1);
+		User user2 = new User();
+		user2.setId("3");
+		user2.setEmail("rak@gmail.com");
+		user2.setName("rak");
+		user2.setRole("ADMIN");
+		user2.setPassword(this.passwordEncoder.encode("11111"));
+		this.userRepository.save(user2);
+		User user3 = new User();
+		user3.setId("4");
+		user3.setEmail("sanju@gmail.com");
+		user3.setName("sanju");
+		user3.setRole("ADMIN");
+		user3.setPassword(this.passwordEncoder.encode("12345"));
+		this.userRepository.save(user3);
 
 
 
