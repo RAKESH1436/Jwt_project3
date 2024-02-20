@@ -1,7 +1,10 @@
 package com.example.Jwt_project3.config;
 
+import com.example.Jwt_project3.Repo.UserRepository;
+import com.example.Jwt_project3.Service.UserService;
 import com.example.Jwt_project3.model.JwtRequest;
 import com.example.Jwt_project3.model.JwtResponse;
+import com.example.Jwt_project3.model.User;
 import com.example.Jwt_project3.sercurity.JwtHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +30,8 @@ public class AuthController {
 
     @Autowired
     private AuthenticationManager manager;
+    @Autowired
+    private UserService userService;
 
 
     @Autowired
@@ -69,6 +74,15 @@ public class AuthController {
         @ExceptionHandler(BadCredentialsException.class)
         public String exceptionHandler() {
             return "Credentials Invalid !!";
+        }
+
+        @PostMapping("/created-user")
+        public User CreateUser(@RequestBody User user){
+            return userService.addUser(user);
+
+
+
+
         }
 
 
