@@ -32,7 +32,7 @@ public class SecurityConfig {
         http.csrf(csrf -> csrf.disable())
                 .authorizeRequests().requestMatchers("/public/**").hasRole("NOMAL")
                 .requestMatchers("/home/**").hasRole("/ADMIN")
-                .requestMatchers("/home/**").authenticated().requestMatchers("/auth/login").permitAll()
+                .requestMatchers("/home/**").authenticated().requestMatchers("/auth/login").permitAll().requestMatchers("auth/created-user").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()

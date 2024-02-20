@@ -1,6 +1,5 @@
-package com.example.Jwt_project3.config;
+package com.example.Jwt_project3.controller;
 
-import com.example.Jwt_project3.Repo.UserRepository;
 import com.example.Jwt_project3.Service.UserService;
 import com.example.Jwt_project3.model.JwtRequest;
 import com.example.Jwt_project3.model.JwtResponse;
@@ -14,8 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.config.annotation.authentication.configuration.EnableGlobalAuthentication;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.*;
