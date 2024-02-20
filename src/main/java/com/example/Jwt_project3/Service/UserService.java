@@ -13,25 +13,20 @@ import java.util.UUID;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
-   //private List<User> store=new ArrayList<>();
 
 
-//    public UserService(){
-//
 
-//
-//
-//
-//
-//
-//
-//    }
+
     public List<User>getUser(){
-        return this.userRepository.findAll();
+        return userRepository.findAll();
+
     }
 
 
+
+
     public User addUser(User user) {
+        user.setId(UUID.randomUUID().toString());
         this.userRepository.save(user);
         return user;
     }
