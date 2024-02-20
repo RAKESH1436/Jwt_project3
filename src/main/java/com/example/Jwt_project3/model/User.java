@@ -22,7 +22,7 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return this.Email;
+        return this.email;
     }
 
     @Override
@@ -51,7 +51,7 @@ public class User implements UserDetails {
     private String id;
     private String name;
     private String password;
-    private String Email;
+    private String email;
     private String role;
 
 }
